@@ -39,13 +39,13 @@ export const Playground = () => {
             <div>
               <label>Amount of wire:</label>
               <Field name="integerAmount" type="number">
-                {({ input }) => <input {...input} />}
+                {({ input }) => <input {...input} className="amount-field" />}
               </Field>
               <strong>.</strong>
               <Field name="decimalAmount" type="number">
                 {({ input }) => (
                   <>
-                    <input {...input} />
+                    <input {...input} className="amount-field" />
                     <label>EUR</label>
                   </>
                 )}
