@@ -18,6 +18,9 @@ npm start
 
 - Navigate to [http://localhost:3000/](http://localhost:3000/).
 
+
+[![React Final Form and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
+
 # About Basefactor + Lemoncode
 
 We are an innovating team of Javascript experts, passionate about turning your ideas into robust products.
