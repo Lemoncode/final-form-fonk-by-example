@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Playground = () => {
   return (
@@ -6,5 +6,5 @@ export const Playground = () => {
       <h1>React Final Form and Fonk</h1>
       <h2>Playground</h2>
     </div>
-  )
-}
+  );
+};
