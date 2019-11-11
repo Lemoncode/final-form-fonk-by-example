@@ -18,6 +18,7 @@ npm start
 
 - Navigate to [http://localhost:3000/](http://localhost:3000/).
 
+- Play with demo:
 
 [![React Final Form and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
 
