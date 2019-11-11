@@ -264,7 +264,7 @@ const validationSchema = {
 +       customArgs: {
 +         min: {
 +           value: 0,
-+           inclusive: true,
++           inclusive: false,
 +         },
 +         max: {
 +           value: 10000,
