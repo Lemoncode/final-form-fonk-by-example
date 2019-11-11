@@ -2,6 +2,10 @@
 
 In this example we setup the basic plumbing to get up and running our project with React Final Form.
 
+## Play with demo:
+
+[![React Final Form and Fonk 01-setup-final-form example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/01-setup-final-form)
+
 ## Steps to build it
 
 - Install project dependencies
@@ -170,10 +174,6 @@ _./src/playground.jsx_
         )}
       />
 ```
-
-- Play with demo:
-
-[![React Final Form and Fonk 01-setup-final-form example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/01-setup-final-form)
 
 # About Basefactor + Lemoncode
 

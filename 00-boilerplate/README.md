@@ -2,6 +2,10 @@
 
 In this example we setup the basic plumbing to get up and running our project and launch it in a dev server.
 
+## Play with demo:
+
+[![React Final Form and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
+
 ## Steps to build it
 
 - Install project dependencies
@@ -17,10 +21,6 @@ npm start
 ```
 
 - Navigate to [http://localhost:3000/](http://localhost:3000/).
-
-- Play with demo:
-
-[![React Final Form and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
 
 # About Basefactor + Lemoncode
 
