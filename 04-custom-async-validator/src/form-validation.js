@@ -15,7 +15,7 @@ export const validationSchema = {
         customArgs: {
           min: {
             value: 0,
-            inclusive: false,
+            inclusive: true,
           },
           max: {
             value: 10000,
