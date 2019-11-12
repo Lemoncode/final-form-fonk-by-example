@@ -1,4 +1,4 @@
-# 03 Custom Validators
+# 03 Custom Sync Validator
 
 In this example we are going to create a sync custom validator with Fonk.
 
@@ -55,6 +55,8 @@ export * from './country-black-list.validator';
 
 - Let's instantiate it in our schema (for instance let's disable France and Spain)
 
+_./src/form-validation.js_
+
 ```diff
 import { Validators } from '@lemoncode/fonk';
 import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
@@ -77,6 +79,73 @@ const validationSchema = {
 +     { validator: countryBlackList, customArgs: { countries: ['FR', 'ES'] } },
     ],
     ...
+```
+
+- _What would happened if get the list from a rest api when the form component is mounted?_ That's an interesting topic, you can add a rule once a component has been mounted and update the associated validation schema.
+
+- Let's first remove the rule from the ValidationSchema:
+
+_./src/form-validation.js_
+
+```diff
+import { Validators } from '@lemoncode/fonk';
+import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { iban } from '@lemoncode/fonk-iban-validator';
+import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
+- import { countryBlackList } from './custom-validators';
+
+- const validationSchema = {
++ export const validationSchema = {
+  field: {
+    account: [
+      Validators.required.validator,
+      iban.validator,
+-     { validator: countryBlackList, customArgs: { countries: ['FR', 'ES'] } },
+    ],
+    ...
+```
+
+- Let's add it to the schema after a fetch call to _getDisabledCountryIBANCollection_
+
+_./src/playground.jsx_
+
+```diff
+import React from 'react';
+import { Form, Field } from 'react-final-form';
+- import { formValidation } from './form-validation';
++ import { formValidation, validationSchema } from './form-validation';
++ import { getDisabledCountryIBANCollection } from './api';
++ import { countryBlackList } from './custom-validators';
+
+export const Playground = () => {
++ React.useEffect(() => {
++   getDisabledCountryIBANCollection().then(countries => {
++     const newValidationSchema = {
++       ...validationSchema,
++       field: {
++         ...validationSchema.field,
++         account: [
++           ...validationSchema.field.account,
++           {
++             validator: countryBlackList,
++             customArgs: {
++               countries,
++             },
++           },
++         ],
++       },
++     };
+
++     formValidation.updateValidationSchema(newValidationSchema);
++   });
++ }, []);
+
+  return (
+    <div>
+      <h1>React Final Form and Fonk</h1>
+      <h2>Wire transfer form</h2>
+      <Form
+      ...
 ```
 
 # About Basefactor + Lemoncode

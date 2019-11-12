@@ -1,8 +1,32 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import { formValidation } from './form-validation';
+import { formValidation, validationSchema } from './form-validation';
+import { getDisabledCountryIBANCollection } from './api';
+import { countryBlackList } from './custom-validators';
 
 export const Playground = () => {
+  React.useEffect(() => {
+    getDisabledCountryIBANCollection().then(countries => {
+      const newValidationSchema = {
+        ...validationSchema,
+        field: {
+          ...validationSchema.field,
+          account: [
+            ...validationSchema.field.account,
+            {
+              validator: countryBlackList,
+              customArgs: {
+                countries,
+              },
+            },
+          ],
+        },
+      };
+
+      formValidation.updateValidationSchema(newValidationSchema);
+    });
+  }, []);
+
   return (
     <div>
       <h1>React Final Form and Fonk</h1>

@@ -2,15 +2,10 @@ import { Validators } from '@lemoncode/fonk';
 import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
-import { countryBlackList } from './custom-validators';
 
-const validationSchema = {
+export const validationSchema = {
   field: {
-    account: [
-      Validators.required.validator,
-      iban.validator,
-      { validator: countryBlackList, customArgs: { countries: ['FR', 'ES'] } },
-    ],
+    account: [Validators.required.validator, iban.validator],
     name: [Validators.required.validator],
     integerAmount: [
       Validators.required.validator,

@@ -1,3 +1,3 @@
-const mockCountries = ['FR'];
+const mockCountries = ['FR', 'ES'];
 
-export const getCountryBlackList = () => Promise.resolve(mockCountries);
+export const getDisabledCountryIBANCollection = () => Promise.resolve(mockCountries);
